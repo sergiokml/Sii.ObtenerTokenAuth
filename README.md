@@ -3,7 +3,7 @@
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/w/sergiokml/Sii.ObtenerTokenAuth?style=for-the-badge)](https://github.com/sergiokml/Sii.ObtenerTokenAuth)
 [![GitHub contributors](https://img.shields.io/github/contributors/sergiokml/Sii.ObtenerTokenAuth?style=for-the-badge)](https://github.com/sergiokml/Sii.ObtenerTokenAuth/graphs/contributors/)
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/sergiokml/Sii.ObtenerTokenAuth?style=for-the-badge)](https://github.com/sergiokml/Sii.ObtenerTokenAuth)
-![GitHub last commit](https://img.shields.io/github/last-commit/sergiokml/Sii.ObtenerTokenAuth?style=for-the-badge)
+
 
 # Obtener Token de autorización SII
 
@@ -33,15 +33,14 @@ It includes:
 
 ### 🚀 Usage
 
-This solution exposes a **Minimal API** endpoint that allows you to request an authentication token from the SII (Chile) through a simple HTTP GET.
-
-Once the app is running (by default at `http://localhost:5058`), you can call the endpoint:
+This solution exposes a **Minimal API** endpoint that allows you to request through a simple HTTP GET. Once the app is running, you can call the endpoint:
 
 ```bash
-curl http://localhost:5058/api/token
+curl http://localhost:5058/api/token \
+  -H "Accept: application/json"
 ```
 
-The response will be a JSON payload with the token issued by the SII (valid for 2 hours):
+The response will be a JSON payload with the token issued by the SII :
 
 ```json
 {
@@ -54,7 +53,7 @@ The response will be a JSON payload with the token issued by the SII (valid for 
 
 ### ⚙️ Configuration
 
-The app requires a few configuration values to securely locate and use the digital certificate stored in Azure Blob Storage. These values can be defined in `appsettings.json`, `secrets.json`, or directly as environment variables in Azure:
+Use `appsettings.json` or environment variables to configure the certificate source:
 
 ```json
 {
@@ -69,23 +68,22 @@ You may also define these as [Azure App Settings](https://learn.microsoft.com/en
 
 ---
 
-### 🔒 Security Disclaimer
-
-> This project involves handling digital certificates and calling secure external services (SOAP). Make sure to store sensitive credentials such as certificate passwords securely using `secrets.json`, environment variables, or Azure App Settings. Never commit your certificates or passwords to the repository.
-
----
-
 ### 📢 Have a question? Found a Bug?
 
 Feel free to **file a new issue** with a respective title and description on the [Sii.ObtenerTokenAuth/issues](https://github.com/sergiokml/Sii.ObtenerTokenAuth/issues) repository.
 
 ---
 
-### ❤️ Community and Contributions
+### 💖 Community and Contributions
 
-I think that **Knowledge Doesn’t Belong to Just Any One Person**, and I always intend to share my knowledge with other developers. A voluntary monetary contribution or your ideas/comments to improve these tools would be appreciated.
+If this tool was useful, consider contributing with ideas or improving it further.
 
-[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=PTKX9BNY96SNJ)
+
+<p align="center">
+    <a href="https://www.paypal.com/donate/?hosted_button_id=PTKX9BNY96SNJ" target="_blank">
+        <img width="12%" src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" alt="Azure Function">
+    </a>
+</p>
 
 ---
 
